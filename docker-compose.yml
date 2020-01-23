@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  rms_main:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    container_name: spi-container
+    volumes:
+      - .:/code
+    ports:
+      - 7010:8000
+    networks:
+      rms_main_network:
+        ipv4_address: 172.168.70.10
+
+networks:
+  rms_main_network:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 172.17.0.0/16
