@@ -9,13 +9,3 @@ services:
       - .:/code
     ports:
       - 7010:8000
-    networks:
-      rms_main_network:
-        ipv4_address: 172.168.70.10
-
-networks:
-  rms_main_network:
-    driver: bridge
-    ipam:
-     config:
-       - subnet: 172.17.0.0/16

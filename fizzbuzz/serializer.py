@@ -1,5 +1,15 @@
 from rest_framework import serializers
+from fizzbuzz.models import Category, SubCategory
 
 
-class FizzBuzzSerializer(serializers.Serializer):
-    count = serializers.IntegerField()
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = '__all__'
+
+
+
+class SubCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SubCategory
+        fields = '__all__'
